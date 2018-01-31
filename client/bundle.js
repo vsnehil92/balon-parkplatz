@@ -39375,8 +39375,7 @@ var Navbars = function (_Component) {
                         _reactBootstrap.FormGroup,
                         null,
                         _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Search' }),
-                        _react2.default.createElement(_reactBootstrap.Image, { src: '../images/searchButton.png', className: 'search', onClick: this.searchLocation }),
-                        ';'
+                        _react2.default.createElement(_reactBootstrap.Image, { src: '../images/searchButton.png', className: 'search', onClick: this.searchLocation })
                     ),
                     ' '
                 ),
@@ -39438,7 +39437,7 @@ exports = module.exports = __webpack_require__(60)(undefined);
 
 
 // module
-exports.push([module.i, ".navbar {\n    background-color: #BE8EFA;\n  }\n\n  .navbar-default .navbar-brand{\n    color: #080808;\n    font-weight: bold;\n}\n\n.navbar-header {\n    margin-top: 2%;\n}\n.form-group {\n    margin-top: 2%;\n}\n\n.search{\n    height: 50px !important;\n    cursor: pointer;\n}", ""]);
+exports.push([module.i, ".navbar {\n    background-color: #BE8EFA;\n    margin-bottom: 0px !important;\n    border: 0px !important;\n    border-radius: 0px !important;\n  }\n\n  .navbar-default .navbar-brand{\n    color: #080808;\n    font-weight: bold;\n}\n\n.navbar-header {\n    margin-top: 2%;\n}\n.form-group {\n    margin-top: 2%;\n}\n\n.search{\n    height: 50px !important;\n    cursor: pointer;\n}", ""]);
 
 // exports
 

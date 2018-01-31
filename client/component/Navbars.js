@@ -21,7 +21,7 @@ class Navbars extends Component{
                 <FormGroup>
                     <FormControl type="text" placeholder="Search" />
                 {/* <Button type="Submit"> */}
-                    <Image src="../images/searchButton.png" className='search' onClick={this.searchLocation}/>;
+                    <Image src="../images/searchButton.png" className='search' onClick={this.searchLocation}/>
                 {/* </Button>  */}
                 </FormGroup>{' '} 
                 </Navbar.Form>
