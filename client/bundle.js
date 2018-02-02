@@ -27176,20 +27176,36 @@ var App = function (_Component) {
           )
         ),
         _react2.default.createElement(
-          'p',
-          { className: 'App-intro' },
-          'To get started, edit ',
+          _reactBootstrap.Grid,
+          null,
           _react2.default.createElement(
-            'code',
-            null,
-            'src/App.js'
-          ),
-          ' and save to reload.'
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Button,
-          { bsStyle: 'primary' },
-          'Primary'
+            _reactBootstrap.Row,
+            { className: 'show-grid' },
+            _react2.default.createElement(
+              _reactBootstrap.Col,
+              { xs: 12, md: 8, lg: 8 },
+              _react2.default.createElement(
+                'p',
+                { className: 'App-intro' },
+                'To get started, edit ',
+                _react2.default.createElement(
+                  'code',
+                  null,
+                  'src/App.js'
+                ),
+                ' and save to reload.'
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Col,
+              { xs: 12, md: 4, lg: 4 },
+              _react2.default.createElement(
+                _reactBootstrap.Button,
+                { bsStyle: 'primary' },
+                'Primary'
+              )
+            )
+          )
         )
       );
     }
