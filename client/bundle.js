@@ -27164,48 +27164,13 @@ var App = function (_Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'div',
-        { className: 'App' },
+        _reactBootstrap.Grid,
+        { fluid: 'true' },
         _react2.default.createElement(
-          'header',
-          { className: 'App-header' },
-          _react2.default.createElement(
-            'h1',
-            { className: 'App-title' },
-            'Welcome to React'
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Grid,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Row,
-            { className: 'show-grid' },
-            _react2.default.createElement(
-              _reactBootstrap.Col,
-              { xs: 12, md: 8, lg: 8 },
-              _react2.default.createElement(
-                'p',
-                { className: 'App-intro' },
-                'To get started, edit ',
-                _react2.default.createElement(
-                  'code',
-                  null,
-                  'src/App.js'
-                ),
-                ' and save to reload.'
-              )
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Col,
-              { xs: 12, md: 4, lg: 4 },
-              _react2.default.createElement(
-                _reactBootstrap.Button,
-                { bsStyle: 'primary' },
-                'Primary'
-              )
-            )
-          )
+          _reactBootstrap.Row,
+          { className: 'show-grid', id: 'mainBody' },
+          _react2.default.createElement(_reactBootstrap.Col, { xs: 8, md: 8, lg: 8, id: 'parking' }),
+          _react2.default.createElement(_reactBootstrap.Col, { xs: 4, md: 4, lg: 4, id: 'areaData' })
         )
       );
     }
@@ -27256,7 +27221,7 @@ exports = module.exports = __webpack_require__(60)(undefined);
 
 
 // module
-exports.push([module.i, ".App {\n  text-align: center;\n}\n\n.App-logo {\n  animation: App-logo-spin infinite 20s linear;\n  height: 80px;\n}\n\n.App-header {\n  background-color: #222;\n  height: 150px;\n  padding: 20px;\n  color: white;\n}\n\n.App-title {\n  font-size: 1.5em;\n}\n\n.App-intro {\n  font-size: large;\n}\n\n@keyframes App-logo-spin {\n  from { transform: rotate(0deg); }\n  to { transform: rotate(360deg); }\n}\n", ""]);
+exports.push([module.i, "#parking{\n  background-color: #F7D774;\n  height: 100%;\n}\n\n#areaData{\n  background-color: aliceblue;\n  height: 100%;\n}\n\n#mainBody{\n  height: calc(100vh - 70.91px);\n}\n", ""]);
 
 // exports
 
@@ -39453,7 +39418,7 @@ exports = module.exports = __webpack_require__(60)(undefined);
 
 
 // module
-exports.push([module.i, ".navbar {\n    background-color: #BE8EFA;\n    margin-bottom: 0px !important;\n    border: 0px !important;\n    border-radius: 0px !important;\n  }\n\n  .navbar-default .navbar-brand{\n    color: #080808;\n    font-weight: bold;\n}\n\n.navbar-header {\n    margin-top: 2%;\n}\n.form-group {\n    margin-top: 2%;\n}\n\n.search{\n    height: 50px !important;\n    cursor: pointer;\n}", ""]);
+exports.push([module.i, ".navbar {\n    background-color: #BE8EFA;\n    margin-bottom: 0px !important;\n    border: 0px !important;\n    border-radius: 0px !important;\n  }\n\n  .navbar-default .navbar-brand{\n    color: #080808;\n    font-weight: bold;\n}\n\n.navbar-header {\n    margin-top: 2%;\n}\n.form-group {\n    margin-top: 2%;\n}\n\n.search{\n    height: 50px !important;\n    cursor: pointer;\n}\n\n#navbar {\n    height: 70.91px;\n}", ""]);
 
 // exports
 

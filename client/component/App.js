@@ -8,24 +8,16 @@ import { Button,
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <Grid>
-          <Row className="show-grid">
-            <Col xs={12} md={8} lg={8}>
-              <p className="App-intro">
-                To get started, edit <code>src/App.js</code> and save to reload.
-              </p>
+
+        <Grid fluid="true">
+          <Row className="show-grid" id="mainBody">
+            <Col xs={8} md={8} lg={8} id="parking">
             </Col>
-            <Col xs={12} md={4} lg={4}>
-              <Button bsStyle="primary">Primary 
-                </Button>
+            <Col xs={4} md={4} lg={4} id="areaData">
             </Col>
           </Row>
           </Grid>
-      </div>
+
     );
   }
 }
