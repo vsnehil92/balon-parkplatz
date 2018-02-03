@@ -27165,7 +27165,7 @@ var App = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         _reactBootstrap.Grid,
-        { fluid: 'true' },
+        { fluid: true },
         _react2.default.createElement(
           _reactBootstrap.Row,
           { className: 'show-grid', id: 'mainBody' },
@@ -39332,16 +39332,26 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Navbars = function (_Component) {
     _inherits(Navbars, _Component);
 
-    function Navbars() {
+    function Navbars(props) {
         _classCallCheck(this, Navbars);
 
-        return _possibleConstructorReturn(this, (Navbars.__proto__ || Object.getPrototypeOf(Navbars)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Navbars.__proto__ || Object.getPrototypeOf(Navbars)).call(this, props));
+
+        _this.state = { value: '' };
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.searchLocation = _this.searchLocation.bind(_this);
+        return _this;
     }
 
     _createClass(Navbars, [{
+        key: 'handleChange',
+        value: function handleChange(event) {
+            this.setState({ value: event.target.value });
+        }
+    }, {
         key: 'searchLocation',
         value: function searchLocation() {
-            alert();
+            alert(this.state.value);
         }
     }, {
         key: 'render',
@@ -39355,7 +39365,7 @@ var Navbars = function (_Component) {
                     _react2.default.createElement(
                         _reactBootstrap.FormGroup,
                         null,
-                        _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', placeholder: 'Search' }),
+                        _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', value: this.state.location, placeholder: 'Search', onChange: this.handleChange }),
                         _react2.default.createElement(_reactBootstrap.Image, { src: '../images/searchButton.png', className: 'search', onClick: this.searchLocation })
                     ),
                     ' '

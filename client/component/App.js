@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
 
-        <Grid fluid="true">
+        <Grid fluid={true}>
           <Row className="show-grid" id="mainBody">
             <Col xs={8} md={8} lg={8} id="parking">
             </Col>
