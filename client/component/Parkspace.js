@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import {} from 'react-bootstrap';
+import '../css/Parkspace.css';
 
-class Parkspace extends Component{
-    
+class Parkspace extends Component {
+    render() {
+        return(
+            <div id="carspace"> </div>
+        );
+    }
 }
 
-export default Component;
+export default Parkspace;

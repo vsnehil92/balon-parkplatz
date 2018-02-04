@@ -4,6 +4,7 @@ import { Button,
           Grid,
           Row,
           Col } from 'react-bootstrap';
+import Parkspace  from './Parkspace';
 
 class App extends Component {
   render() {
@@ -12,11 +13,12 @@ class App extends Component {
         <Grid fluid={true}>
           <Row className="show-grid" id="mainBody">
             <Col xs={8} md={8} lg={8} id="parking">
+            <Parkspace/>
             </Col>
             <Col xs={4} md={4} lg={4} id="areaData">
             </Col>
           </Row>
-          </Grid>
+        </Grid>
 
     );
   }
