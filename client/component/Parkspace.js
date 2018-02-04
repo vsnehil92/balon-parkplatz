@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/Parkspace.css';
+import '../css/Parkspace.css' ;
 
 class Parkspace extends Component {
     render() {
