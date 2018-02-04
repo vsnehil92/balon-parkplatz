@@ -4,10 +4,13 @@
 }
 
 #areaData{
-  background-color: aliceblue;
+  background-color: black;
   height: 100%;
 }
 
-#mainBody{
-  height: calc(100vh - 70.91px);
-}
+
+@media screen and (min-width : 1224px){
+  #mainBody{
+    height: calc(100vh - 70.91px);
+  }  
+} 

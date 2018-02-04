@@ -27176,7 +27176,44 @@ var App = function (_Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { xs: 8, md: 8, lg: 8, id: 'parking' },
-            _react2.default.createElement(_Parkspace2.default, null)
+            _react2.default.createElement(
+              _reactBootstrap.Row,
+              { className: 'show-grid' },
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { xs: 3, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
+                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
+                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
+                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
+              )
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Row,
+              { className: 'show-grid' },
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
+                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
+                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Col,
+                { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
+                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
+              )
+            )
           ),
           _react2.default.createElement(_reactBootstrap.Col, { xs: 4, md: 4, lg: 4, id: 'areaData' })
         )
@@ -27229,7 +27266,7 @@ exports = module.exports = __webpack_require__(46)(undefined);
 
 
 // module
-exports.push([module.i, "#parking{\n  background-color: #F7D774;\n  height: 100%;\n}\n\n#areaData{\n  background-color: aliceblue;\n  height: 100%;\n}\n\n#mainBody{\n  height: calc(100vh - 70.91px);\n}\n", ""]);
+exports.push([module.i, "#parking{\n  background-color: #F7D774;\n  height: 100%;\n}\n\n#areaData{\n  background-color: black;\n  height: 100%;\n}\n\n\n@media screen and (min-width : 1224px){\n  #mainBody{\n    height: calc(100vh - 70.91px);\n  }  \n} ", ""]);
 
 // exports
 
@@ -39349,7 +39386,7 @@ var Parkspace = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { id: 'carspace' },
+                { className: 'carspace', style: { backgroundColor: this.props.colour }, id: this.props.id },
                 ' '
             );
         }
@@ -39400,7 +39437,7 @@ exports = module.exports = __webpack_require__(46)(undefined);
 
 
 // module
-exports.push([module.i, "#carspace {\n    height: 200px;\n    width: 150px;\n    border-style: solid;\n    border-width: medium;\n    margin-top: 20px;\n}", ""]);
+exports.push([module.i, ".carspace {\n    height: 200px;\n    width: 150px;\n    border-style: solid;\n    border-width: medium;\n    margin-top: 20px;\n    margin-bottom: 20px;\n}", ""]);
 
 // exports
 
