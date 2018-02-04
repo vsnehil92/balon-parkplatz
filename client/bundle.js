@@ -27158,10 +27158,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var App = function (_Component) {
   _inherits(App, _Component);
 
-  function App() {
+  function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this.state = { full: '#EB5757', empty: '#27AE60' };
+    return _this;
   }
 
   _createClass(App, [{
@@ -27182,17 +27185,17 @@ var App = function (_Component) {
               _react2.default.createElement(
                 _reactBootstrap.Col,
                 { xs: 3, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
+                _react2.default.createElement(_Parkspace2.default, { colour: this.state.full, id: '1' })
               ),
               _react2.default.createElement(
                 _reactBootstrap.Col,
                 { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
+                _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
               ),
               _react2.default.createElement(
                 _reactBootstrap.Col,
                 { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
+                _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
               )
             ),
             _react2.default.createElement(
@@ -27201,17 +27204,17 @@ var App = function (_Component) {
               _react2.default.createElement(
                 _reactBootstrap.Col,
                 { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
+                _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
               ),
               _react2.default.createElement(
                 _reactBootstrap.Col,
                 { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
+                _react2.default.createElement(_Parkspace2.default, { colour: this.state.full, id: '1' })
               ),
               _react2.default.createElement(
                 _reactBootstrap.Col,
                 { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
+                _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
               )
             )
           ),
@@ -39507,7 +39510,7 @@ var Navbars = function (_Component) {
                     _react2.default.createElement(
                         _reactBootstrap.FormGroup,
                         null,
-                        _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', value: this.state.location, placeholder: 'Search', onChange: this.handleChange }),
+                        _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', value: this.state.location, placeholder: 'Search Location', onChange: this.handleChange }),
                         _react2.default.createElement(_reactBootstrap.Image, { src: '../images/searchButton.png', className: 'search', onClick: this.searchLocation })
                     ),
                     ' '
