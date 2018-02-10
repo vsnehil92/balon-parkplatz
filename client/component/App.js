@@ -15,6 +15,7 @@ class App extends Component {
     }
   render() {
     return (
+
       <div>
         <div id="navbar">
           <Navbars/>
@@ -52,6 +53,7 @@ class App extends Component {
           </Grid>
         </div>
       </div>
+
     );
   }
 }
