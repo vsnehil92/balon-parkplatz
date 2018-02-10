@@ -9730,13 +9730,8 @@ var _App = __webpack_require__(155);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _Navbars = __webpack_require__(309);
-
-var _Navbars2 = _interopRequireDefault(_Navbars);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_Navbars2.default, null), document.getElementById('navbar'));
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
 
 /***/ }),
@@ -27147,6 +27142,10 @@ var _Parkspace = __webpack_require__(306);
 
 var _Parkspace2 = _interopRequireDefault(_Parkspace);
 
+var _Navbars = __webpack_require__(309);
+
+var _Navbars2 = _interopRequireDefault(_Navbars);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27158,64 +27157,80 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var App = function (_Component) {
   _inherits(App, _Component);
 
-  function App() {
+  function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this.state = { full: '#EB5757', empty: '#27AE60' };
+    return _this;
   }
 
   _createClass(App, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        _reactBootstrap.Grid,
-        { fluid: true },
+        'div',
+        null,
         _react2.default.createElement(
-          _reactBootstrap.Row,
-          { className: 'show-grid', id: 'mainBody' },
+          'div',
+          { id: 'navbar' },
+          _react2.default.createElement(_Navbars2.default, null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'parking_data' },
           _react2.default.createElement(
-            _reactBootstrap.Col,
-            { xs: 8, md: 8, lg: 8, id: 'parking' },
+            _reactBootstrap.Grid,
+            { fluid: true },
             _react2.default.createElement(
               _reactBootstrap.Row,
-              { className: 'show-grid' },
+              { className: 'show-grid', id: 'mainBody' },
               _react2.default.createElement(
                 _reactBootstrap.Col,
-                { xs: 3, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
+                { xs: 8, md: 8, lg: 8, id: 'parking' },
+                _react2.default.createElement(
+                  _reactBootstrap.Row,
+                  { className: 'show-grid' },
+                  _react2.default.createElement(
+                    _reactBootstrap.Col,
+                    { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
+                    _react2.default.createElement(_Parkspace2.default, { colour: this.state.full, id: '1' })
+                  ),
+                  _react2.default.createElement(
+                    _reactBootstrap.Col,
+                    { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
+                    _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
+                  ),
+                  _react2.default.createElement(
+                    _reactBootstrap.Col,
+                    { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
+                    _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
+                  )
+                ),
+                _react2.default.createElement(
+                  _reactBootstrap.Row,
+                  { className: 'show-grid' },
+                  _react2.default.createElement(
+                    _reactBootstrap.Col,
+                    { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
+                    _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
+                  ),
+                  _react2.default.createElement(
+                    _reactBootstrap.Col,
+                    { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
+                    _react2.default.createElement(_Parkspace2.default, { colour: this.state.full, id: '1' })
+                  ),
+                  _react2.default.createElement(
+                    _reactBootstrap.Col,
+                    { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
+                    _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
+                  )
+                )
               ),
-              _react2.default.createElement(
-                _reactBootstrap.Col,
-                { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.Col,
-                { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
-              )
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Row,
-              { className: 'show-grid' },
-              _react2.default.createElement(
-                _reactBootstrap.Col,
-                { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.Col,
-                { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.Col,
-                { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                _react2.default.createElement(_Parkspace2.default, { colour: 'red', id: '1' })
-              )
+              _react2.default.createElement(_reactBootstrap.Col, { xs: 4, md: 4, lg: 4, id: 'areaData' })
             )
-          ),
-          _react2.default.createElement(_reactBootstrap.Col, { xs: 4, md: 4, lg: 4, id: 'areaData' })
+          )
         )
       );
     }
@@ -39507,7 +39522,7 @@ var Navbars = function (_Component) {
                     _react2.default.createElement(
                         _reactBootstrap.FormGroup,
                         null,
-                        _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', value: this.state.location, placeholder: 'Search', onChange: this.handleChange }),
+                        _react2.default.createElement(_reactBootstrap.FormControl, { type: 'text', value: this.state.location, placeholder: 'Search Location', onChange: this.handleChange }),
                         _react2.default.createElement(_reactBootstrap.Image, { src: '../images/searchButton.png', className: 'search', onClick: this.searchLocation })
                     ),
                     ' '
@@ -39570,7 +39585,7 @@ exports = module.exports = __webpack_require__(46)(undefined);
 
 
 // module
-exports.push([module.i, ".navbar {\n    background-color: #BE8EFA;\n    margin-bottom: 0px !important;\n    border: 0px !important;\n    border-radius: 0px !important;\n  }\n\n  .navbar-default .navbar-brand{\n    color: #080808;\n    font-weight: bold;\n}\n\n.navbar-header {\n    margin-top: 2%;\n}\n.form-group {\n    margin-top: 2%;\n}\n\n.search{\n    height: 50px !important;\n    cursor: pointer;\n}\n\n#navbar {\n    height: 70.91px;\n}", ""]);
+exports.push([module.i, ".navbar {\n    background-color: #BE8EFA;\n    margin-bottom: 0px !important;\n    border: 0px !important;\n    border-radius: 0px !important;\n  }\n\n  .navbar-default .navbar-brand{\n    color: #080808;\n    font-weight: bold;\n}\n\n.form-group {\n    margin-top: 2%;\n    display: -webkit-inline-box;\n}\n\n.search{\n    height: 38px !important;\n    cursor: pointer;\n}\n", ""]);
 
 // exports
 

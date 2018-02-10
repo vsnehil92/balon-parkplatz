@@ -30,7 +30,7 @@ class Navbars extends Component{
             <Navbar>
                 <Navbar.Form pullLeft>
                 <FormGroup>
-                    <FormControl type="text" value={this.state.location} placeholder="Search" onChange={this.handleChange} />
+                    <FormControl type="text" value={this.state.location} placeholder="Search Location" onChange={this.handleChange} />
                     <Image src="../images/searchButton.png" className='search' onClick={this.searchLocation}/>
                 </FormGroup>{' '} 
                 </Navbar.Form>

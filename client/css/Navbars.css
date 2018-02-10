@@ -10,18 +10,12 @@
     font-weight: bold;
 }
 
-.navbar-header {
-    margin-top: 2%;
-}
 .form-group {
     margin-top: 2%;
+    display: -webkit-inline-box;
 }
 
 .search{
-    height: 50px !important;
+    height: 38px !important;
     cursor: pointer;
-}
-
-#navbar {
-    height: 70.91px;
 }
