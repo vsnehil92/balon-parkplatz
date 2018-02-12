@@ -27178,58 +27178,64 @@ var App = function (_Component) {
           _react2.default.createElement(_Navbars2.default, null)
         ),
         _react2.default.createElement(
-          'div',
-          { id: 'parking_data' },
+          _reactBootstrap.Grid,
+          { fluid: true },
           _react2.default.createElement(
-            _reactBootstrap.Grid,
-            { fluid: true },
+            _reactBootstrap.Row,
+            { className: 'show-grid', id: 'mainBody' },
             _react2.default.createElement(
-              _reactBootstrap.Row,
-              { className: 'show-grid', id: 'mainBody' },
+              _reactBootstrap.Col,
+              { xs: 8, md: 8, lg: 8, id: 'parking' },
               _react2.default.createElement(
-                _reactBootstrap.Col,
-                { xs: 8, md: 8, lg: 8, id: 'parking' },
+                _reactBootstrap.Row,
+                { className: 'show-grid' },
                 _react2.default.createElement(
-                  _reactBootstrap.Row,
-                  { className: 'show-grid' },
-                  _react2.default.createElement(
-                    _reactBootstrap.Col,
-                    { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                    _react2.default.createElement(_Parkspace2.default, { colour: this.state.full, id: '1' })
-                  ),
-                  _react2.default.createElement(
-                    _reactBootstrap.Col,
-                    { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                    _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
-                  ),
-                  _react2.default.createElement(
-                    _reactBootstrap.Col,
-                    { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                    _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
-                  )
+                  _reactBootstrap.Col,
+                  { xs: 7, md: 3, lg: 3, xsOffset: 4, mdOffset: 1, lgOffset: 1 },
+                  _react2.default.createElement(_Parkspace2.default, { colour: this.state.full, id: '1' })
                 ),
                 _react2.default.createElement(
-                  _reactBootstrap.Row,
-                  { className: 'show-grid' },
-                  _react2.default.createElement(
-                    _reactBootstrap.Col,
-                    { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                    _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
-                  ),
-                  _react2.default.createElement(
-                    _reactBootstrap.Col,
-                    { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                    _react2.default.createElement(_Parkspace2.default, { colour: this.state.full, id: '1' })
-                  ),
-                  _react2.default.createElement(
-                    _reactBootstrap.Col,
-                    { xs: 12, md: 3, lg: 3, xsOffset: 5, mdOffset: 1, lgOffset: 1 },
-                    _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
-                  )
+                  _reactBootstrap.Col,
+                  { xs: 7, md: 3, lg: 3, xsOffset: 4, mdOffset: 1, lgOffset: 1 },
+                  _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
+                ),
+                _react2.default.createElement(
+                  _reactBootstrap.Col,
+                  { xs: 7, md: 3, lg: 3, xsOffset: 4, mdOffset: 1, lgOffset: 1 },
+                  _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
+                ),
+                _react2.default.createElement(
+                  _reactBootstrap.Col,
+                  { xs: 7, md: 3, lg: 3, xsOffset: 4, mdOffset: 1, lgOffset: 1 },
+                  _react2.default.createElement(_Parkspace2.default, { colour: this.state.full, id: '1' })
                 )
               ),
-              _react2.default.createElement(_reactBootstrap.Col, { xs: 4, md: 4, lg: 4, id: 'areaData' })
-            )
+              _react2.default.createElement(
+                _reactBootstrap.Row,
+                { className: 'show-grid' },
+                _react2.default.createElement(
+                  _reactBootstrap.Col,
+                  { xs: 7, md: 3, lg: 3, xsOffset: 4, mdOffset: 1, lgOffset: 1 },
+                  _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
+                ),
+                _react2.default.createElement(
+                  _reactBootstrap.Col,
+                  { xs: 7, md: 3, lg: 3, xsOffset: 4, mdOffset: 1, lgOffset: 1 },
+                  _react2.default.createElement(_Parkspace2.default, { colour: this.state.full, id: '1' })
+                ),
+                _react2.default.createElement(
+                  _reactBootstrap.Col,
+                  { xs: 7, md: 3, lg: 3, xsOffset: 4, mdOffset: 1, lgOffset: 1 },
+                  _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
+                ),
+                _react2.default.createElement(
+                  _reactBootstrap.Col,
+                  { xs: 7, md: 3, lg: 3, xsOffset: 4, mdOffset: 1, lgOffset: 1 },
+                  _react2.default.createElement(_Parkspace2.default, { colour: this.state.full, id: '1' })
+                )
+              )
+            ),
+            _react2.default.createElement(_reactBootstrap.Col, { xs: 4, md: 4, lg: 4, id: 'areaData' })
           )
         )
       );
@@ -27281,7 +27287,7 @@ exports = module.exports = __webpack_require__(46)(undefined);
 
 
 // module
-exports.push([module.i, "#parking{\n  background-color: #F7D774;\n  height: 100%;\n}\n\n#areaData{\n  background-color: black;\n  height: 100%;\n}\n\n\n@media screen and (min-width : 1224px){\n  #mainBody{\n    height: calc(100vh - 70.91px);\n  }  \n} ", ""]);
+exports.push([module.i, "#parking{\n  background-color: #F7D774;\n  height: 100%;\n}\n\n#areaData{\n  background-color: black;\n  height: 100%;\n}\n\n\n@media screen{\n  #mainBody{\n    height: calc(100vh - 70.91px);\n  }  \n} ", ""]);
 
 // exports
 
@@ -39585,7 +39591,7 @@ exports = module.exports = __webpack_require__(46)(undefined);
 
 
 // module
-exports.push([module.i, ".navbar {\n    background-color: #BE8EFA;\n    margin-bottom: 0px !important;\n    border: 0px !important;\n    border-radius: 0px !important;\n  }\n\n  .navbar-default .navbar-brand{\n    color: #080808;\n    font-weight: bold;\n}\n\n.form-group {\n    margin-top: 2%;\n    display: -webkit-inline-box;\n}\n\n.search{\n    height: 38px !important;\n    cursor: pointer;\n}\n", ""]);
+exports.push([module.i, ".navbar {\n    background-color: #BE8EFA;\n    margin-bottom: 0px !important;\n    border: 0px !important;\n    border-radius: 0px !important;\n    height: 70.91px;\n  }\n\n  .navbar-default .navbar-brand{\n    color: #080808;\n    font-weight: bold;\n}\n\n.form-group {\n    margin-top: 2%;\n    display: -webkit-inline-box;\n}\n\n.search{\n    height: 38px !important;\n    cursor: pointer;\n}\n", ""]);
 
 // exports
 

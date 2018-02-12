@@ -20,30 +20,35 @@ class App extends Component {
         <div id="navbar">
           <Navbars/>
         </div>
-        <div id="parking_data">
           <Grid fluid={true}>
             <Row className="show-grid" id="mainBody">
               <Col xs={8} md={8} lg={8} id="parking">
                 <Row className="show-grid">
-                  <Col xs={12} md={3} lg={3} xsOffset={5} mdOffset={1} lgOffset={1}>
+                  <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
                     <Parkspace colour= {this.state.full} id="1"/>
                   </Col>
-                  <Col xs={12} md={3} lg={3} xsOffset={5} mdOffset={1} lgOffset={1}>
+                  <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
                     <Parkspace colour= {this.state.empty} id="1"/>
                   </Col>
-                  <Col xs={12} md={3} lg={3} xsOffset={5} mdOffset={1} lgOffset={1}>
+                  <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
                     <Parkspace colour= {this.state.empty} id="1"/>
+                  </Col>
+                  <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
+                    <Parkspace colour= {this.state.full} id="1"/>
                   </Col>
                 </Row>
                 <Row className="show-grid">
-                  <Col xs={12} md={3} lg={3} xsOffset={5} mdOffset={1} lgOffset={1}>
+                  <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
                     <Parkspace colour= {this.state.empty} id="1"/>
                   </Col>
-                  <Col xs={12} md={3} lg={3} xsOffset={5} mdOffset={1} lgOffset={1}>
+                  <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
                     <Parkspace colour= {this.state.full} id="1"/>
                   </Col>
-                  <Col xs={12} md={3} lg={3} xsOffset={5} mdOffset={1} lgOffset={1}>
+                  <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
                     <Parkspace colour= {this.state.empty} id="1"/>
+                  </Col>
+                  <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
+                    <Parkspace colour= {this.state.full} id="1"/>
                   </Col>
                 </Row>
               </Col>
@@ -51,7 +56,6 @@ class App extends Component {
               </Col>
             </Row>
           </Grid>
-        </div>
       </div>
 
     );
