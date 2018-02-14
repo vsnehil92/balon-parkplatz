@@ -33,9 +33,6 @@ class App extends Component {
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
                     <Parkspace colour= {this.state.empty} id="1"/>
                   </Col>
-                  <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.state.full} id="1"/>
-                  </Col>
                 </Row>
                 <Row className="show-grid">
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
@@ -46,9 +43,6 @@ class App extends Component {
                   </Col>
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
                     <Parkspace colour= {this.state.empty} id="1"/>
-                  </Col>
-                  <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.state.full} id="1"/>
                   </Col>
                 </Row>
               </Col>

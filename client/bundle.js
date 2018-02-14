@@ -27203,11 +27203,6 @@ var App = function (_Component) {
                   _reactBootstrap.Col,
                   { xs: 7, md: 3, lg: 3, xsOffset: 4, mdOffset: 1, lgOffset: 1 },
                   _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
-                ),
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { xs: 7, md: 3, lg: 3, xsOffset: 4, mdOffset: 1, lgOffset: 1 },
-                  _react2.default.createElement(_Parkspace2.default, { colour: this.state.full, id: '1' })
                 )
               ),
               _react2.default.createElement(
@@ -27227,11 +27222,6 @@ var App = function (_Component) {
                   _reactBootstrap.Col,
                   { xs: 7, md: 3, lg: 3, xsOffset: 4, mdOffset: 1, lgOffset: 1 },
                   _react2.default.createElement(_Parkspace2.default, { colour: this.state.empty, id: '1' })
-                ),
-                _react2.default.createElement(
-                  _reactBootstrap.Col,
-                  { xs: 7, md: 3, lg: 3, xsOffset: 4, mdOffset: 1, lgOffset: 1 },
-                  _react2.default.createElement(_Parkspace2.default, { colour: this.state.full, id: '1' })
                 )
               )
             ),
