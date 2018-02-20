@@ -7,11 +7,19 @@ import { Button,
           Navbar} from 'react-bootstrap';
 import Parkspace  from './Parkspace';
 import Navbars from './Navbars';
+import {connect} from 'react-redux';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { full: '#EB5757', empty: '#27AE60' };
+    this.color = { full: '#EB5757', empty: '#27AE60' };
+    }
+    locationDetail(){
+      if (this.props.location!=''){
+        return(
+          <h4 id="loc">Your Location is  {this.props.location}</h4>
+        )
+      }
     }
   render() {
     return (
@@ -23,26 +31,29 @@ class App extends Component {
           <Grid fluid={true}>
             <Row className="show-grid" id="mainBody">
               <Col xs={8} md={8} lg={8} id="parking">
+              <Row className="show-grid">
+                {this.locationDetail()}
+              </Row>
                 <Row className="show-grid">
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.state.full} id="1"/>
+                    <Parkspace colour= {this.color.full} id="1"/>
                   </Col>
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.state.empty} id="1"/>
+                    <Parkspace colour= {this.color.empty} id="1"/>
                   </Col>
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.state.empty} id="1"/>
+                    <Parkspace colour= {this.color.empty} id="1"/>
                   </Col>
                 </Row>
                 <Row className="show-grid">
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.state.empty} id="1"/>
+                    <Parkspace colour= {this.color.empty} id="1"/>
                   </Col>
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.state.full} id="1"/>
+                    <Parkspace colour= {this.color.full} id="1"/>
                   </Col>
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.state.empty} id="1"/>
+                    <Parkspace colour= {this.color.empty} id="1"/>
                   </Col>
                 </Row>
               </Col>
@@ -56,4 +67,9 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    location: state.location
+  };
+}
+export default connect(mapStateToProps)(App);

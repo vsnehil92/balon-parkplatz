@@ -14,3 +14,7 @@
     height: calc(100vh - 70.91px);
   }  
 } 
+
+#loc{
+  text-align: center;
+}
