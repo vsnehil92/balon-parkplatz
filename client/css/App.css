@@ -2,7 +2,6 @@
   background-color: #F7D774;
   height: 100%;
 }
-
 #areaData{
   background-color: black;
   height: 100%;
@@ -10,11 +9,18 @@
 
 
 @media screen{
-  #mainBody{
+  #welcomeScreen{
     height: calc(100vh - 70.91px);
-  }  
+    background-color: #F7D774;
+  }
 } 
 
 #loc{
   text-align: center;
 }
+
+#welcomeContent{
+  margin-top: calc(100vh - 50%);
+}
+
+

@@ -10680,7 +10680,7 @@ var _reactRedux = __webpack_require__(90);
 
 var _redux = __webpack_require__(60);
 
-var _reducers = __webpack_require__(350);
+var _reducers = __webpack_require__(352);
 
 var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -28106,6 +28106,8 @@ var _Navbars2 = _interopRequireDefault(_Navbars);
 
 var _reactRedux = __webpack_require__(90);
 
+var _windowSize = __webpack_require__(350);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28122,7 +28124,7 @@ var App = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-    _this.color = { full: '#EB5757', empty: '#27AE60' };
+    _this.color = { full: '#EB5757', empty: '#27AE60', emptySpace: '2', vacentSpace: '4' };
     return _this;
   }
 
@@ -28131,25 +28133,6 @@ var App = function (_Component) {
     value: function locationDetail() {
       if (this.props.location != '') {
         return _react2.default.createElement(
-          'h4',
-          { id: 'loc' },
-          'Your Location is  ',
-          this.props.location
-        );
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'div',
-          { id: 'navbar' },
-          _react2.default.createElement(_Navbars2.default, null)
-        ),
-        _react2.default.createElement(
           _reactBootstrap.Grid,
           { fluid: true },
           _react2.default.createElement(
@@ -28161,7 +28144,24 @@ var App = function (_Component) {
               _react2.default.createElement(
                 _reactBootstrap.Row,
                 { className: 'show-grid' },
-                this.locationDetail()
+                _react2.default.createElement(
+                  'h4',
+                  { id: 'loc' },
+                  'Your Location is  ',
+                  this.props.location
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { id: 'loc' },
+                  'Total free space ',
+                  this.color.vacentSpace
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { id: 'loc' },
+                  'Total full parking ',
+                  this.color.emptySpace
+                )
               ),
               _react2.default.createElement(
                 _reactBootstrap.Row,
@@ -28204,7 +28204,39 @@ var App = function (_Component) {
             ),
             _react2.default.createElement(_reactBootstrap.Col, { xs: 4, md: 4, lg: 4, id: 'areaData' })
           )
-        )
+        );
+      } else {
+        return _react2.default.createElement(
+          _reactBootstrap.Grid,
+          { fluid: true },
+          _react2.default.createElement(
+            _reactBootstrap.Row,
+            { className: 'show-grid', id: 'welcomeScreen' },
+            _react2.default.createElement(
+              _reactBootstrap.Col,
+              { xs: 7, md: 7, lg: 7, xsOffset: 4, mdOffset: 4, lgOffset: 4 },
+              _react2.default.createElement(
+                'h1',
+                { id: 'welcomeContent' },
+                'Welcome to Ballon Parkplatz'
+              )
+            )
+          )
+        );
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          { id: 'navbar' },
+          _react2.default.createElement(_Navbars2.default, null)
+        ),
+        this.locationDetail()
       );
     }
   }]);
@@ -28259,7 +28291,7 @@ exports = module.exports = __webpack_require__(47)(undefined);
 
 
 // module
-exports.push([module.i, "#parking{\n  background-color: #F7D774;\n  height: 100%;\n}\n\n#areaData{\n  background-color: black;\n  height: 100%;\n}\n\n\n@media screen{\n  #mainBody{\n    height: calc(100vh - 70.91px);\n  }  \n} \n\n#loc{\n  text-align: center;\n}", ""]);
+exports.push([module.i, "#parking{\n  background-color: #F7D774;\n  height: 100%;\n}\n#areaData{\n  background-color: black;\n}\n\n\n@media screen{\n  #areaData{\n    height: calc(100vh);\n  }\n} \n\n@media screen{\n  #welcomeScreen{\n    height: calc(100vh - 70.91px);\n    background-color: #F7D774;\n  }\n} \n\n#loc{\n  text-align: center;\n}\n\n#welcomeContent{\n  margin-top: calc(100vh - 50%);\n}\n\n", ""]);
 
 // exports
 
@@ -41820,6 +41852,62 @@ var currentLocation = exports.currentLocation = function currentLocation(locatio
 /* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* WEBPACK VAR INJECTION */(function(process) {/*
+ * window-size
+ * https://github.com/jonschlinkert/window-size
+ *
+ * Copyright (c) 2014 Jon Schlinkert
+ * Licensed under the MIT license.
+ */
+
+const tty = __webpack_require__(351)
+
+module.exports = (function() {
+  var width;
+  var height;
+
+  if(tty.isatty(1) && tty.isatty(2)) {
+    if(process.stdout.getWindowSize) {
+      width = process.stdout.getWindowSize(1)[0];
+      height = process.stdout.getWindowSize(1)[1];
+    } else if (tty.getWindowSize) {
+      width = tty.getWindowSize()[1];
+      height = tty.getWindowSize()[0];
+    } else if (process.stdout.columns && process.stdout.rows) {
+      height = process.stdout.columns;
+      width = process.stdout.rows;
+    }
+  } else {
+    new Error('Error: could not get window size with tty or process.stdout');
+  }
+  return {
+    height: height,
+    width: width
+  }
+})();
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
+
+/***/ }),
+/* 351 */
+/***/ (function(module, exports) {
+
+exports.isatty = function () { return false; };
+
+function ReadStream() {
+  throw new Error('tty.ReadStream is not implemented');
+}
+exports.ReadStream = ReadStream;
+
+function WriteStream() {
+  throw new Error('tty.ReadStream is not implemented');
+}
+exports.WriteStream = WriteStream;
+
+
+/***/ }),
+/* 352 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -41829,7 +41917,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(60);
 
-var _locationReducer = __webpack_require__(351);
+var _locationReducer = __webpack_require__(353);
 
 var _locationReducer2 = _interopRequireDefault(_locationReducer);
 
@@ -41842,7 +41930,7 @@ var reducers = (0, _redux.combineReducers)({
 exports.default = reducers;
 
 /***/ }),
-/* 351 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
