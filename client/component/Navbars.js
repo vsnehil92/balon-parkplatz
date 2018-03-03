@@ -27,6 +27,7 @@ class Navbars extends Component{
 
     searchLocation(){
         this.props.currentLocation(this.state.value);
+
       }
     render(){
         return(

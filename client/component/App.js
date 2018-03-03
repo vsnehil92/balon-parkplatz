@@ -9,11 +9,36 @@ import Parkspace  from './Parkspace';
 import Navbars from './Navbars';
 import {connect} from 'react-redux';
 import { height } from 'window-size';
+import axios from 'axios';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.color = { full: '#EB5757', empty: '#27AE60', emptySpace:'2', vacentSpace:'4' };
+    this.state = { full: '#EB5757', empty: '#27AE60', emptySpace:'2', vacentSpace:'4' , current_state: ''};
+    }
+    componentDidMount(){
+      axios.get('/parking_data')
+      .then((response) => {
+        this.getstate(response.data[0].current_status)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }
+    getstate(data){
+      console.log(data);
+      this.setState({current_state: data});
+      console.log(this.state.current_state);
+    }
+
+    getcolor() {
+      console.log(this.state.current_state);
+      if(this.state.current_state==1){
+        return(this.state.full);
+      } else{
+        return(this.state.empty);
+      }
+      
     }
     locationDetail(){
       if (this.props.location!=''){
@@ -23,29 +48,29 @@ class App extends Component {
               <Col xs={8} md={8} lg={8} id="parking">
                 <Row className="show-grid">
                   <h4 id="loc">Your Location is  {this.props.location}</h4>
-                  <p id="loc">Total free space {this.color.vacentSpace}</p>
-                  <p id="loc">Total full parking {this.color.emptySpace}</p> 
+                  <p id="loc">Total free space {this.state.vacentSpace}</p>
+                  <p id="loc">Total full parking {this.state.emptySpace}</p> 
                   </Row>
                 <Row className="show-grid">
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.color.full} id="1"/>
+                    <Parkspace colour= {this.getcolor()} id="1"/>
                   </Col>
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.color.empty} id="1"/>
+                    <Parkspace colour= {this.state.empty} id="1"/>
                   </Col>
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.color.empty} id="1"/>
+                    <Parkspace colour= {this.state.empty} id="1"/>
                   </Col>
                 </Row>
                 <Row className="show-grid">
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.color.empty} id="1"/>
+                    <Parkspace colour= {this.state.empty} id="1"/>
                   </Col>
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.color.full} id="1"/>
+                    <Parkspace colour= {this.state.full} id="1"/>
                   </Col>
                   <Col xs={7} md={3} lg={3} xsOffset={4} mdOffset={1} lgOffset={1}>
-                    <Parkspace colour= {this.color.empty} id="1"/>
+                    <Parkspace colour= {this.state.empty} id="1"/>
                   </Col>
                 </Row>
               </Col>
