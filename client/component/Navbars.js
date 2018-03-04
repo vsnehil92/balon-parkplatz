@@ -22,12 +22,15 @@ class Navbars extends Component{
         }
     handleChange(event) {
         this.setState({value: event.target.value});
-
+        console.log(this.state.value);
     }
 
     searchLocation(){
+        if(this.state.value!="NIET" && this.state.value!="niet"){
+            alert("No ballon parking at the location search again");
+        } else{
         this.props.currentLocation(this.state.value);
-
+        }
       }
     render(){
         return(

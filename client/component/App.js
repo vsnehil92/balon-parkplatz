@@ -9,12 +9,13 @@ import Parkspace  from './Parkspace';
 import Navbars from './Navbars';
 import {connect} from 'react-redux';
 import { height } from 'window-size';
+import MyMapComponent from './Maps';
 import axios from 'axios';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { full: '#EB5757', empty: '#27AE60', emptySpace:'2', vacentSpace:'4' , current_state: ''};
+    this.state = { full: '#EB5757', empty: '#27AE60', emptySpace:'2', vacentSpace:'4' , current_state: '', isMarkerShown: false,};
     }
     componentDidMount(){
       axios.get('/parking_data')
@@ -24,7 +25,20 @@ class App extends Component {
       .catch((error) => {
         console.log(error);
       });
+      this.delayedShowMarker();
     }
+
+    delayedShowMarker(){
+      setTimeout(() => {
+        this.setState({ isMarkerShown: true })
+      }, 3000)
+    }
+  
+    handleMarkerClick() {
+      this.setState({ isMarkerShown: false })
+      this.delayedShowMarker()
+    }
+
     getstate(data){
       console.log(data);
       this.setState({current_state: data});
@@ -75,6 +89,8 @@ class App extends Component {
                 </Row>
               </Col>
               <Col xs={4} md={4} lg={4} id="areaData">
+                <MyMapComponent isMarkerShown={this.state.isMarkerShown}
+                                onMarkerClick={this.handleMarkerClick} />
               </Col>
             </Row>
           </Grid>
