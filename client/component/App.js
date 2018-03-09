@@ -11,23 +11,20 @@ import {connect} from 'react-redux';
 import { height } from 'window-size';
 import MyMapComponent from './Maps';
 import axios from 'axios';
+import  getStatus  from './api/getStatus';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { full: '#EB5757', empty: '#27AE60', emptySpace:'2', vacentSpace:'4' , current_state: '', isMarkerShown: false,};
+    this.state = { full: '#EB5757', empty: '#27AE60', emptySpace:'2', vacentSpace:'4' , current_state: '0', isMarkerShown: false, timestamp: 'no timestamp yet'};
+    getStatus((err, timestamp) => {
+      this.setState({current_state: timestamp[0].current_status })
+      console.log(this.state.current_state);
+    });
     }
     componentDidMount(){
-      axios.get('/parking_data')
-      .then((response) => {
-        this.getstate(response.data[0].current_status)
-      })
-      .catch((error) => {
-        console.log(error);
-      });
       this.delayedShowMarker();
     }
-
     delayedShowMarker(){
       setTimeout(() => {
         this.setState({ isMarkerShown: true })
@@ -37,12 +34,6 @@ class App extends Component {
     handleMarkerClick() {
       this.setState({ isMarkerShown: false })
       this.delayedShowMarker()
-    }
-
-    getstate(data){
-      console.log(data);
-      this.setState({current_state: data});
-      console.log(this.state.current_state);
     }
 
     getcolor() {
