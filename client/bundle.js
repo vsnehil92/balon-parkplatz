@@ -60963,7 +60963,7 @@ var _socket2 = _interopRequireDefault(_socket);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var socket = (0, _socket2.default)('http://localhost:8000');
+var socket = (0, _socket2.default)('http://localhost:8080');
 
 function getStatus(cb) {
   socket.on('timer', function (timestamp) {
