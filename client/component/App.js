@@ -16,7 +16,7 @@ import  getStatus  from './api/getStatus';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { full: '#EB5757', empty: '#27AE60', emptySpace:'2', vacentSpace:'4' , current_state: '0', isMarkerShown: false, timestamp: 'no timestamp yet'};
+    this.state = { full: '#EB5757', empty: '#27AE60', emptySpace:'2', vacentSpace:'4' , current_state: '', isMarkerShown: false, timestamp: 'no timestamp yet'};
     getStatus((err, timestamp) => {
       this.setState({current_state: timestamp[0].current_status })
       console.log(this.state.current_state);

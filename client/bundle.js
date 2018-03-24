@@ -35779,7 +35779,7 @@ var App = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-    _this.state = { full: '#EB5757', empty: '#27AE60', emptySpace: '2', vacentSpace: '4', current_state: '0', isMarkerShown: false, timestamp: 'no timestamp yet' };
+    _this.state = { full: '#EB5757', empty: '#27AE60', emptySpace: '2', vacentSpace: '4', current_state: '', isMarkerShown: false, timestamp: 'no timestamp yet' };
     (0, _getStatus2.default)(function (err, timestamp) {
       _this.setState({ current_state: timestamp[0].current_status });
       console.log(_this.state.current_state);
