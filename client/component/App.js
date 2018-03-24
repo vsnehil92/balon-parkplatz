@@ -10,7 +10,6 @@ import Navbars from './Navbars';
 import {connect} from 'react-redux';
 import { height } from 'window-size';
 import MyMapComponent from './Maps';
-import axios from 'axios';
 import  getStatus  from './api/getStatus';
 
 class App extends Component {
