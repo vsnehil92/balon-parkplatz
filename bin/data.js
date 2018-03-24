@@ -1,7 +1,7 @@
 var data = require('./fetch.js');
 var MongoClient = require('mongodb').MongoClient;
 
-const io = require('socket.io')(process.env.PORT || 8080);
+const io = require('socket.io')(8080);
 console.log("running at localhost/8080");
 
 io.on('connection', (client) => {
