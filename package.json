@@ -21,7 +21,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "webpack": "webpack",
-    "start": "npm run webpack && nodemon --exec babel-node -- bin/www"
+    "start": "npm run webpack && nodemon --exec babel-node -- bin/www | node ./bin/data.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0"

@@ -16,4 +16,5 @@ app.set('views', path.join(__dirname, '../client'));
 app.use(express.static(path.join(__dirname, '../client')));
 app.use('/', router);
 app.use(ignoreFavicon);
+
 module.exports=app;
