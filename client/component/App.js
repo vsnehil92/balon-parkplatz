@@ -91,7 +91,8 @@ class App extends Component {
           <Grid fluid={true}>
             <Row className="show-grid" id="welcomeScreen">
               <Col xs={7} md={7} lg={7} xsOffset={4} mdOffset={4} lgOffset={4}>
-                <h1 id="welcomeContent">Welcome to Ballon Parkplatz</h1>
+                <h1 class="welcomeContent">Welcome to Ballon Parkplatz</h1>
+                <p>Search NIET beacuse only NIET parking is saved in database</p>
               </Col>
             </Row>
           </Grid>

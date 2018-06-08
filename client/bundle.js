@@ -35224,8 +35224,13 @@ var App = function (_Component) {
               { xs: 7, md: 7, lg: 7, xsOffset: 4, mdOffset: 4, lgOffset: 4 },
               _react2.default.createElement(
                 'h1',
-                { id: 'welcomeContent' },
+                { 'class': 'welcomeContent' },
                 'Welcome to Ballon Parkplatz'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Search NIET beacuse only NIET parking is saved in database'
               )
             )
           )
@@ -35298,7 +35303,7 @@ exports = module.exports = __webpack_require__(62)(undefined);
 
 
 // module
-exports.push([module.i, "#parking{\n  background-color: #F7D774;\n  height: 100%;\n}\n#areaData{\n  background-color: black;\n  height: 100%;\n}\n\n\n@media screen{\n  #welcomeScreen{\n    height: calc(100vh - 70.91px);\n    background-color: #F7D774;\n  }\n} \n\n#loc{\n  text-align: center;\n}\n\n#welcomeContent{\n  margin-top: calc(100vh - 50%);\n}\n\n\n", ""]);
+exports.push([module.i, "#parking{\n  background-color: #F7D774;\n  height: 100%;\n}\n#areaData{\n  background-color: black;\n  height: 100%;\n}\n\n\n@media screen{\n  #welcomeScreen{\n    height: calc(100vh - 70.91px);\n    background-color: #F7D774;\n  }\n} \n\n#loc{\n  text-align: center;\n}\n\n.welcomeContent{\n  margin-top: calc(100vh - 50%);\n}\n\n\n", ""]);
 
 // exports
 
